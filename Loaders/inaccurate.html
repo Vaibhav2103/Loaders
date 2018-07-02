@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type = "text/css" href="style1.css">
+    </head>
+    <body>
+        <div id="overlay">
+            <div id="progstat"></div>
+            <div id="progress"></div>
+        </div>
+        <div id="container">
+            <img src="https://i.blogs.es/063bdf/aquaris_v_comp/1366_2000.jpg" alt="">
+            <img src="https://d1f139o8a3nb8j.cloudfront.net/V/uploads/20170625205001/pwa-512x512.png" alt="">
+            <img src="https://d1f139o8a3nb8j.cloudfront.net/V/uploads/20180302033156/win_image_1440x960%402x.jpg" alt="">
+        </div>
+        <script type="text/javascript">
+            function loader(){
+                var allImages = document.images;
+                var steps = allImages.length;
+                var c = 0;
+                debugger;
+
+                function removeOverlay(){
+                    document.getElementById("overlay").style.display = "none";
+                }
+
+                function loaded(){
+                    c += 1;
+                    var w = parseInt(c * (100/steps));
+                    document.getElementById("progress").style.width = w + "%";
+                    document.getElementById("progstat").innerHTML = "Loaded : "+ w + "%";
+                    if(c == steps)
+                        removeOverlay();
+                }
+
+                for(var i=0; i < allImages.length; i++){
+                    var tImg = new Image();
+                    tImg.onload = loaded;
+                    tImg.src = allImages[i].src;
+                }   
+            }
+            loader();
+        </script>
+    </body>
+</html>

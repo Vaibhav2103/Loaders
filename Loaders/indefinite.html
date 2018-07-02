@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Awesme Loader</title>
+        <link rel="stylesheet" type="text/css" href="style1.css">
+    </head>
+    <body>
+        <div id="loader-wrapper">
+            <!-- Loader -->
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+        <div id="content-wrapper">
+                <!-- Content -->
+                Hello
+        </div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded",function(){
+                // setTimeout(function(){
+                    document.getElementById('loader-wrapper').style.display ="none";
+                    document.getElementById('content-wrapper').style.visibility ="initial";
+                // },2000);
+            },false);
+        
+            // for(var i=0;i<1000000000;i++)
+            // {
+            //     //dosent do anything
+            // }
+        </script>
+        <script type="text/javascript" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"></script>
+    </body>
+</html>
